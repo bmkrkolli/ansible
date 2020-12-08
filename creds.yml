@@ -19,7 +19,7 @@
           kind: ssh 
           state: present
           organization: "{{ org }}" 
-          name: "{{ cred_name }}"
+          name: "{{ cred }}"
           username: "{{ usr }}"
           password: "{{ pwd }}"
           ssh_key_data: "{{ key }}"
