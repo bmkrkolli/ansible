@@ -24,5 +24,6 @@
           password: "{{ pwd }}"
           ssh_key_data: "{{ key }}"
           ssh_key_unlock: "{{ pph }}"
+          tower_host: localhost
           validate_certs: false
       ignore_errors: true
