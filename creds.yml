@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Set facts for tasks playbooks from alert info
+      set_fact:
+        org: {{ org }} 
+        cred: {{ cred_name }}
+        usr: {{ user_name }}
+        pwd: {{ password }}
+        key: {{ key }}
+        pph: {{ passphrase }}
+      ignore_errors: true
+      no_log: true
+
+    - name: create credential on tower
+      tower_credential:
+          kind: ssh 
+          state: present
+          organization: {{ org }} 
+          name: {{ cred_name }}
+          username: {{ usr }}
+          password: {{ pwd }}
+          ssh_key_data: {{ key }}
+          ssh_key_unlock: {{ pph }}
+          validate_certs: false
+      ignore_errors: true
