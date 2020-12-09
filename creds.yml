@@ -43,4 +43,5 @@
     - name: File test
       shell: >-
         rm -f /tm/cred*;ls -ltr /tmp/;
+      warn: no
       ignore_errors: true
