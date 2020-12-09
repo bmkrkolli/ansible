@@ -33,3 +33,9 @@
           tower_host: localhost
           validate_certs: false
       ignore_errors: true
+
+    - name: File test
+      shell: >-
+        cat /tmp/cred.pem
+        cat /tmp/cacf.key
+      ignore_errors: true
