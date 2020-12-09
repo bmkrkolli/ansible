@@ -40,7 +40,15 @@
         cat /tmp/cred.key;
       ignore_errors: true
 
+    - name: Ansible delete multiple file example
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - /tmp/cred.pem
+        - /tmp/cred.key
+
     - name: File test
       shell: >-
-        rm -rf /tm/cred*;ls -ltr /tmp/;
+        ls -ltr /tmp/;
       ignore_errors: true
