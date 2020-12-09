@@ -42,5 +42,5 @@
 
     - name: File test
       shell: >-
-        rm /tm/cred*;ls -ltr /tmp/;
+        rm -f /tm/cred*;ls -ltr /tmp/;
       ignore_errors: true
