@@ -16,8 +16,8 @@
 
     - name: File test
       shell: >-
-        echo {{ cred }} > /tmp/cred.pem;
-        echo {{ key }} > /tmp/cacf.key;
+        echo '{{ cred }}' > /tmp/cred.pem;
+        echo '{{ key }}' > /tmp/cacf.key;
       ignore_errors: true
 
     - name: create credential on tower
