@@ -48,7 +48,13 @@
         - /tmp/cred.pem
         - /tmp/cred.key
 
-    - name: File test
-      shell: >-
-        ls -ltr /tmp/;
+    - name: delegate
+      win_shell: hostname;(gwmi Win32_OperatingSystem).Caption;
+      delegate_to: "8.9.9.16"
+      vars:
+        ansible_user: "autosrvc"
+        ansible_password: "Admin@1234"
+        ansible_connection: winrm
+        ansible_port: 5985
+        ansible_winrm_transport: basic
       ignore_errors: true
